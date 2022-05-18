@@ -84,7 +84,8 @@ void
 imguiWrapper::Discard() {
     o_assert_dbg(this->IsValid());
     ImGui::GetIO().Fonts->TexID = 0;
-    ImGui::DestroyContext();
+    // ImGui::DestroyContext();
+    ImGui::Shutdown();
     Gfx::DestroyResources(this->resLabel);
     this->isValid = false;
     self = nullptr;
